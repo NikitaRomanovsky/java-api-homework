@@ -3,9 +3,9 @@ package models.responses;
 public class UserResponse {
   public Integer id;
   public String email;
-  public Object firstName;
-  public Object surname;
-  public Object personalId;
+  public String firstName;
+  public String surname;
+  public String personalId;
 
   public Integer getId() {
     return id;
