@@ -6,6 +6,7 @@ import models.requests.*;
 import models.responses.PaymentsResponse;
 import models.responses.UserRootResponse;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -22,6 +23,8 @@ public class E2ETest {
     api = new ApiClient("http://localhost:8080");
   }
 
+  @DisplayName(
+      "Full user onboarding: register → personal data → add funds → verify balance & payments")
   @Test
   public void userFlowTest() {
     String email = "user" + System.currentTimeMillis() + "@test.com";
@@ -69,7 +72,7 @@ public class E2ETest {
     Response getBalanceResponse = api.getUserBalanceRequest(jsessionid);
     double balance = Double.parseDouble(getBalanceResponse.asString());
 
-    assertEquals(200, addFundsResponse.getStatusCode());
+    assertEquals(200, getBalanceResponse.getStatusCode());
     assertEquals(FUNDS_AMOUNT, balance);
 
     // 5.Get payments list to see latest transaction
