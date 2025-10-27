@@ -1,11 +1,11 @@
 package models.responses;
 
 public class UserResponse {
-  public Integer id;
-  public String email;
-  public String firstName;
-  public String surname;
-  public String personalId;
+  private Integer id;
+  private String email;
+  private String firstName;
+  private String surname;
+  private String personalId;
 
   public Integer getId() {
     return id;

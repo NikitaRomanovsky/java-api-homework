@@ -1,8 +1,8 @@
 package models.responses;
 
 public class UserRootResponse {
-  public UserResponse user;
-  public MessageResponse message;
+  private UserResponse user;
+  private MessageResponse message;
 
   public UserResponse getUser() {
     return user;
