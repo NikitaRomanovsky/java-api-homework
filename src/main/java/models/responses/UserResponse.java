@@ -15,15 +15,15 @@ public class UserResponse {
     return email;
   }
 
-  public Object getFirstName() {
+  public String getFirstName() {
     return firstName;
   }
 
-  public Object getSurname() {
+  public String getSurname() {
     return surname;
   }
 
-  public Object getPersonalId() {
+  public String getPersonalId() {
     return personalId;
   }
 }
